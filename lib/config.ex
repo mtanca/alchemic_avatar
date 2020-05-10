@@ -26,13 +26,7 @@ defmodule AlchemicAvatar.Config do
   app_name
   """
   def app_name do
-    case Keyword.fetch(@config, :app_name) do
-      {:ok, name} -> name
-      _ ->
-        raise ArgumentError, message: """
-          you need set app_name in your config
-        """
-    end
+    Keyword.get(@config, :app_name, :orca)
   end
 
 
